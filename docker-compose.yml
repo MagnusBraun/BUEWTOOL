@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: lst-postgres
+    environment:
+      POSTGRES_USER: lst
+      POSTGRES_PASSWORD: lst
+      POSTGRES_DB: lst_bauueberwachung
+    ports:
+      - "5432:5432"
+    volumes:
+      - lst_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lst -d lst_bauueberwachung"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  lst_pgdata:
