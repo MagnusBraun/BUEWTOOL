@@ -1,0 +1,2 @@
+-- Referenzschema für LST KÜP/VLP (wird durch Alembic-Migrationen verwaltet)
+-- Siehe alembic/versions/ für die ausführbare Migration.
